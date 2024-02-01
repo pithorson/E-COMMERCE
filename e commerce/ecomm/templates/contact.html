@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Website</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{% static 'contact.css' %}">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- CSS link -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+    <section id="header">
+        <a href="#"><img src="{% static 'img/logo.webp' %}"  class="logo" alt=""></a>
+        <div>
+          <ul id="navbar">
+              <li {% if request.path == '/' %}class="active"{% endif %}><a href="/">Home</a></li>
+              <li {% if request.path == '/shop/' %}class="active"{% endif %}><a href="/shop/">Shop</a></li>
+              <li {% if request.path == '/about/' %}class="active"{% endif %}><a href="/about/">About</a></li>
+              <li {% if request.path == '/contact/' %}class="active"{% endif %}><a href="/contact/">Contact</a></li>
+          </ul>
+      </div>
+    </section>
+    </head>  
+    <body>
+        <div class="container">
+            <div class="content">
+                <div class="left-side">
+                    <div class="address details">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="topic">Address</div>
+                        <div class="text-one">Surkhet, NP12</div>
+                        <div class="text-two">Birendranagar 06</div>
+                    </div>
+                    <div class="phone details">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="topic">Phone</div>
+                        <div class="text-one">+0098 9893 5647</div>
+                        <div class="text-two">+0096 3434 5678</div>
+                    </div>
+                    <div class="email details">
+                        <i class="fas fa-envelope"></i>
+                        <div class="topic">Email</div>
+                        <div class="text-one">codinglab@gmail.com</div>
+                        <div class="text-two">info.codinglab@gmail.com</div>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="topic-text">Send us a message</div>
+                    <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
+                    <form method="post" action="{% url 'contact' %}">
+                        {% csrf_token %}
+                        <!-- {{ form.as_p }} -->
+                        <div class="input-box">
+                            <input type="text" name="name" placeholder="Enter your name">
+                        </div>
+                        <div class="input-box">
+                            <input type="text" name="email" placeholder="Enter your email">
+                        </div>
+                        <div class="input-box message-box">
+                            <input type="text" name="message" placeholder="Something...">
+                        </div>
+                        <div class="button">
+                            <input type="submit" value="Send Now">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <footer class="section-p1">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img class="logo" src="{% static 'img/logo.webp' %}" alt="">
+                        <h4>Contact</h4>
+                        <p><strong>Address:</strong> 61, Mela Street, Thanjavur</p>
+                        <p><strong>Phone:</strong> 9876543210 / 9790528623</p>
+                        <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+                        <div class="follow">
+                            <h4>Follow Us</h4>
+                            <div class="icon">
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-instagram"></i>
+                                <i class="fab fa-pinterest-p"></i>
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>About</h4>
+                        <a style="color: black;" class="style" href="#">About us</a><br>
+                        <a style="color: black;" href="#">Delivery Information</a><br>
+                        <a style="color: black;" href="#">Privacy Policy</a><br>
+                        <a style="color: black;" href="#">Terms & Conditions</a><br>
+                        <a style="color: black;" href="#">Contact us</a><br>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>My Account</h4>
+                        <a style="color: black;" href="#">Sign In</a><br>
+                        <a style="color: black;" href="#">View Cart</a><br>
+                        <a style="color: black;" href="#">My Wishlist</a><br>
+                        <a style="color: black;" href="#">Track My Order</a><br>
+                        <a style="color: black;" href="#">Help</a><br>
+                    </div>
+                    <div class="col-md-3 install">
+                        <h4>Install App</h4>
+                        <p>From App Store or Google Play</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="{% static 'img/pay/app.jpg' %}" alt="">
+                            </div>
+                            <div class="col-md-6">
+                                <img src="{% static 'img/pay/play.jpg' %}" alt="">
+                            </div>
+                        </div>
+                        <p>Secured Payment Gateways</p>
+                        <img src="{% static 'img/pay/pay.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p> 2021, tech2etc-HTML CSS Ecommerce Template</p>
+            </div>
+        </footer>
+    </body>
+</html>

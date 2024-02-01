@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Ecommerce Website</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- Additional CSS link -->
+    <!-- ... (any additional CSS links you may have) -->
+       <!-- CSS link -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img src="{% static 'img/logo.webp' %}" class="logo" alt=""></a>
+
+        <div>
+          <ul id="navbar">
+       
+              <li {% if request.path == '/' %}class="active"{% endif %}><a href="/">Home</a></li>
+              <li {% if request.path == '/shop/' %}class="active"{% endif %}><a href="/shop/">Shop</a></li>
+              <li {% if request.path == '/about/' %}class="active"{% endif %}><a href="/about/">About</a></li>
+              <li {% if request.path == '/contact/' %}class="active"{% endif %}><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Header content (same as in the index.html) -->
+        <!-- ... -->
+    </section>
+
+    <section id="about" class="section-p1">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Welcome to our Ecommerce website, your one-stop destination for all trendy and fashionable products. We are dedicated to providing you with the best shopping experience, with a focus on quality, customer service, and uniqueness.</p>
+            
+            <h3>Our Mission</h3>
+            <p>At Ecommerce, our mission is to offer a wide range of high-quality products at affordable prices. We strive to bring the latest fashion trends to your doorstep, ensuring you stay stylish and up-to-date with the ever-changing fashion landscape.</p>
+
+            <h3>Why Choose Us?</h3>
+            <p>We understand that you have many choices when it comes to online shopping. Here's why you should choose us:</p>
+            <ul>
+                <li>Curated Selection: Handpicked products to meet your style needs.</li>
+                <li>Quality Assurance: We prioritize quality in every product we offer.</li>
+                <li>Secure Shopping: Your safety and privacy are our top priorities.</li>
+                <li>Customer Support: Our dedicated support team is here to assist you.</li>
+            </ul>
+
+            <h3>Connect With Us</h3>
+            <p>Stay connected with us on social media to get the latest updates, promotions, and fashion tips:</p>
+            <div class="social-icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-pinterest-p"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer section (same as in the index.html) -->
+
+    <footer class="section-p1">
+        <div class="container-fluid">
+          <div class="row">
+      
+            <div class="col-md-3">
+              <img class="logo" src="{% static 'img/logo.webp' %}" alt="ere">
+              <h4>Contact</h4>
+              <p><strong>Address:</strong> 61, Mela Street, Thanjavur</p>
+              <p><strong>Phone:</strong> 9876543210 / 9790528623</p>
+              <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+              <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                  <i class="fab fa-facebook-f"></i>
+                  <i class="fab fa-twitter"></i>
+                  <i class="fab fa-instagram"></i>
+                  <i class="fab fa-pinterest-p"></i>
+                  <i class="fab fa-youtube"></i>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-md-3">
+              <h4>About</h4>
+              <a style="color: black;" class="style" href="#">About us</a><br>
+              <a style="color: black;" href="#">Delivery Information</a><br>
+              <a style="color: black;" href="#">Privacy Policy</a><br>
+              <a style="color: black;" href="#">Terms & Conditions</a><br>
+              <a style="color: black;" href="#">Contact us</a><br>
+            </div>
+      
+            <div class="col-md-3">
+              <h4>My Account</h4>
+              <a style="color: black;" href="#">Sign In</a><br>
+              <a style="color: black;" href="#">View Cart</a><br>
+              <a style="color: black;" href="#">My Wishlist</a><br>
+              <a style="color: black;" href="#">Track My Order</a><br>
+              <a style="color: black;" href="#">Help</a><br>
+            </div>
+      
+            <div class="col-md-3 install">
+              <h4>Install App</h4>
+              <p>From App Store or Google Play</p>
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="{% static 'img/pay/app.jpg' %}" alt="">
+                </div>
+                <div class="col-md-6">
+                  <img src="{% static 'img/pay/play.jpg' %}" alt="">
+                </div>
+              </div>
+              <p>Secured Payment Gateways</p>
+              <img src="{% static 'img/pay/pay.png' %}" alt="">
+            </div>
+      
+          </div>
+        </div>
+    <div class="copyright">
+          <p> 2021, tech2etc-HTML CSS Ecommerce Template</p>
+        </div>
+      </footer>
+    <!-- ... -->
+
+</body>
+</html>
